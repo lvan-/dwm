@@ -62,6 +62,8 @@ static const char *termcmd[]  = { "urxvt", NULL };
 static const char *mutecmd[] = { "volume.sh", "toggle", NULL };
 static const char *volupcmd[] = { "volume.sh", "up", NULL };
 static const char *voldowncmd[] = { "volume.sh", "down", NULL };
+static const char *brdowncmd[] = { "xbacklight", "-dec", "10", NULL };
+static const char *brupcmd[] = { "xbacklight", "-inc", "10", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -101,6 +103,8 @@ static Key keys[] = {
     { 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd} },
     { 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd} },
     { 0, XF86XK_AudioMute,        spawn, {.v = mutecmd} },
+    { 0, XF86XK_MonBrightnessUp,   spawn, {.v = brupcmd} },
+    { 0, XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd} },
 };
 
 /* button definitions */
